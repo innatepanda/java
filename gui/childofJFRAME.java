@@ -12,10 +12,10 @@ public class childofJFRAME extends JFrame {
         
         this.getContentPane().setBackground(Color.blue);
         //this.setSize(520,600);
-        this.setMinimumSize(new Dimension(220,200));
+        this.setMinimumSize(new Dimension(420,400));
         //this.setResizable(false);
-        this.pack();
-        //this.setLayout(null);
+        
+        
         this.setVisible(true);
     }
     
