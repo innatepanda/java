@@ -1,7 +1,7 @@
 package gui;
 import java.awt.*;
 import java.awt.event.*;
-//swing outdated but teaches basic concepts
+//swing outdated but gets the job done
 
 import javax.swing.*;
 
