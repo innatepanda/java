@@ -16,7 +16,7 @@ public class childofJFRAME extends JFrame {
         //this.setResizable(false);
         
         
-        this.setVisible(true);
+        //this.setVisible(true);
     }
     
 }
