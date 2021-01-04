@@ -9,14 +9,17 @@ import java.awt.*;
 
 public class gui2 {
     
-    JButton button;
+    JButton button, button2;
     
     public gui2()
     {
         
-        /*button = new JButton("prwess");        
+        button = new JButton("prwess");        
         button.setBounds(10, 10, 100, 100);
         button.setFocusable(false);
+        button2 = new JButton("prwess");        
+        button2.setBounds(40, 10, 100, 100);
+        button2.setFocusable(false);/*
         button.addActionListener(e-> System.err.println("poo"));//lamba exp
         button.setFont(new Font("Comic Sans", Font.BOLD,12));*/
         
@@ -42,17 +45,24 @@ public class gui2 {
         frame.add(new JButton("4"));
         --------------------------------------------grid layout -------- */
         
-/*--------------------layered pane---------------*/ 
+/*--------------------layered pane--------------- 
 // provides a z positioning, z-index. and wont move or change z positioning depending on selection normally
-//not visible unless some el added to it, pane is just an invisble panel, sorta.
+//not visible unless some el added to it, pane is just an invisble panel, sorta.zx
+        JLayeredPane pane =new JLayeredPane();
+        pane.add(button, JLayeredPane.DRAG_LAYER);
+        pane.add(button2, 1); //higher number, that one is at front
+        pane.setBounds(10,10,200,200);
+
+-------------------------------------------------------*/
 
 
+/*...............dialogue box----------*/
 
+//JOptionPane - standard dialogue box
 
-        
-        
-        
-        
+        JOptionPane pane = new JOptionPane();
+        pane.showMessageDialog(null, "message", "title", JOptionPane.PLAIN_MESSAGE);
+        frame.add(pane);
         //frame.pack();
         frame.setLayout(null); //use setlayout to use bounds
         frame.setVisible(true);

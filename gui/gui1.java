@@ -35,10 +35,12 @@ class gui1 implements ActionListener
         //creating object, so that it runs constuctor
     
     }
-
+//frame.dispose() closes the current something, esp frame
     public void actionPerformed(ActionEvent e)
     {
+        
         count++;
         label.setText("Number of clicks: " + count);
+        new gui2();
     }
 }
