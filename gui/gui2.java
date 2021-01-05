@@ -1,7 +1,5 @@
 package gui;
 import javax.swing.*;
-import java.awt.*;
-
 import java.awt.event.*;
 
 // by default frame.setLayout(new BorderLayout()); and panel.setLayout(new FlowLayout())
@@ -15,6 +13,7 @@ public class gui2 implements ActionListener{
     //JTextField text;
     JCheckBox checkBox;
     ButtonGroup group;
+    JComboBox box;
     
     public gui2()
     {
@@ -96,10 +95,21 @@ public class gui2 implements ActionListener{
         frame.add(radio2);        
         frame.add(checkBox);
         -------------------------------------------*/
-        button.addActionListener(this);
-        frame.add(button);
-        //frame.pack();
-        frame.setLayout(null); //use setlayout to use bounds
+        
+
+        /*-----------
+        String r[]={"d","e","j","m"};
+        box=new JComboBox(r);  
+        // -btn, drop field and text field combined
+        
+        box.addActionListener(this);
+        ---------------------*/
+
+
+        
+        frame.add(box);
+        //frame.setLayout(null); //use setlayout to use bounds
+        frame.pack();
         frame.setVisible(true);
     
     }
@@ -111,7 +121,7 @@ public class gui2 implements ActionListener{
 
     public void actionPerformed(ActionEvent e)
     {
-        System.out.println(e.getSource());
+        System.out.println(box.getSelectedItem());
     }
     
 }
