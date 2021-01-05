@@ -2,24 +2,30 @@ package gui;
 import javax.swing.*;
 import java.awt.*;
 
+import java.awt.event.*;
+
 // by default frame.setLayout(new BorderLayout()); and panel.setLayout(new FlowLayout())
 // flow layout- if contents do not fit in one row shifts to next row, new flowlayout(flowlayout.(options), hor spacing, ver spacing)
 // borderLayout - places objects acc to north east west south and center. new borderlayout(hor(margin between east west and center),vert margin) 
 // gridlayout - places components in grid of cells, each cell is same size
 
-public class gui2 {
+public class gui2 implements ActionListener{
     
     JButton button, button2;
+    //JTextField text;
+    JCheckBox checkBox;
+    ButtonGroup group;
     
     public gui2()
     {
         
         button = new JButton("prwess");        
-        button.setBounds(10, 10, 100, 100);
+        button.setBounds(10, 80, 70, 50);
         button.setFocusable(false);
         button2 = new JButton("prwess");        
         button2.setBounds(40, 10, 100, 100);
-        button2.setFocusable(false);/*
+        button2.setFocusable(false);
+        /*
         button.addActionListener(e-> System.err.println("poo"));//lamba exp
         button.setFont(new Font("Comic Sans", Font.BOLD,12));*/
         
@@ -55,22 +61,57 @@ public class gui2 {
 
 -------------------------------------------------------*/
 
-
-/*...............dialogue box----------*/
+/*...............dialogue box----------
 
 //JOptionPane - standard dialogue box
-
+        ImageIcon icon = new ImageIcon("prof.png");
         JOptionPane pane = new JOptionPane();
-        pane.showMessageDialog(null, "message", "title", JOptionPane.PLAIN_MESSAGE);
-        frame.add(pane);
+        System.err.println(pane.showConfirmDialog(null, "message", "title", JOptionPane.YES_NO_CANCEL_OPTION)); 
+        System.err.println(pane.showInputDialog(null, "message", "title", JOptionPane.QUESTION_MESSAGE));
+        //also .show option dialog
+        //pane.showMessageDialog(null, "message", "title", JOptionPane.PLAIN_MESSAGE); //.plain msg has more options 
+        -----------------------------------------------*/
+        
+/*------------textfield-------------------
+        text =new JTextField();
+        text.setBounds(10, 10,250, 70);
+        text.setCaretColor(Color.green);
+        ------------------------------------*/
+        
+/*------------------checkbox and radiobtn-----
+        checkBox=new JCheckBox("this");
+        checkBox.setBounds(10, 10, 100,50);
+        JRadioButton radio=new JRadioButton("m");
+        radio.setBounds(10, 190, 70, 30);
+        JRadioButton radio2=new JRadioButton("n");
+        radio2.setBounds(90, 190, 70, 30);
+        radio.addActionListener(this);
+        radio2.addActionListener(this);
+        
+
+        group=new ButtonGroup();
+        group.add(radio);
+        group.add(radio2);
+        frame.add(radio);
+        frame.add(radio2);        
+        frame.add(checkBox);
+        -------------------------------------------*/
+        button.addActionListener(this);
+        frame.add(button);
         //frame.pack();
         frame.setLayout(null); //use setlayout to use bounds
         frame.setVisible(true);
+    
     }
 
     public  static void main (String args[])
     {
         new gui2();
     }
-   
+
+    public void actionPerformed(ActionEvent e)
+    {
+        System.out.println(e.getSource());
+    }
+    
 }
