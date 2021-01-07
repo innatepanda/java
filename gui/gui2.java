@@ -107,9 +107,9 @@ public class gui2 implements ActionListener{
 
 
         
-        frame.add(box);
-        //frame.setLayout(null); //use setlayout to use bounds
-        frame.pack();
+        frame.add(button);
+        frame.setLayout(null); //use setlayout to use bounds
+        //frame.pack();
         frame.setVisible(true);
     
     }
